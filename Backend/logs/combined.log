@@ -257,3 +257,6 @@
 [2025-08-03 19:27:03] INFO: GET /api/students/approved
 [2025-08-04 12:15:12] INFO: GET /api/students/approved
 [2025-08-04 12:15:19] INFO: GET /api/teachers/approved
+[2025-08-04 12:35:28] INFO: POST /api/students/create
+[2025-08-04 12:35:28] INFO: Student created: jissica123@gmail.com
+[2025-08-04 12:36:00] INFO: GET /api/teachers/approved
