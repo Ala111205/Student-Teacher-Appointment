@@ -1,15 +1,14 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const morgan = require("morgan");
 const requestLogger = require("./middelWares/requestLogger");
 
-require("dotenv").config();
-
 const app = express();
 
 app.use(cors({
-  origin:"https://student-teacher-appointment-7l2897jvh.vercel.app", // add Vercel domain here
+  origin:"https://student-teacher-appointment-green.vercel.app/", // add Vercel domain here
   credentials: true
 }));
 
@@ -19,11 +18,10 @@ app.use(morgan("dev"));
 app.use(requestLogger);
 
 
-const MONGO_uri = process.env.MONGO_URI;
 console.log("📌 Fetching pending users from DB...");
 console.log("Mongo URI:", process.env.MONGODB_URI);
 
-mongoose.connect(MONGO_uri)
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB connected..."))
   .catch((error) => console.log(error));
 
