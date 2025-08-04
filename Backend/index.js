@@ -6,12 +6,12 @@ const requestLogger = require("./middelWares/requestLogger");
 
 require("dotenv").config();
 
+const app = express();
+
 app.use(cors({
   origin: ["http://localhost:5173", "student-teacher-appointment-70quqehl6.vercel.app"], // add Vercel domain here
   credentials: true
 }));
-
-const app = express();
 
 app.use(express.json());
 app.use(cors());
