@@ -255,3 +255,5 @@
 [2025-08-03 18:25:38] INFO: GET /api/students/approved
 [2025-08-03 18:27:17] INFO: GET /api/students/approved
 [2025-08-03 19:27:03] INFO: GET /api/students/approved
+[2025-08-04 12:15:12] INFO: GET /api/students/approved
+[2025-08-04 12:15:19] INFO: GET /api/teachers/approved
