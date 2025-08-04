@@ -5,6 +5,9 @@ const cors = require("cors");
 const morgan = require("morgan");
 const requestLogger = require("./middelWares/requestLogger");
 
+console.log("📌 Fetching pending users from DB...");
+console.log("Mongo URI:", process.env.MONGODB_URI);
+
 const app = express();
 
 app.use(cors({
@@ -17,11 +20,7 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(requestLogger);
 
-
-console.log("📌 Fetching pending users from DB...");
-console.log("Mongo URI:", process.env.MONGODB_URI);
-
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected..."))
   .catch((error) => console.log(error));
 
