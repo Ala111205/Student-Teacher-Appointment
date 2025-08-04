@@ -9,7 +9,7 @@ require("dotenv").config();
 const app = express();
 
 app.use(cors({
-  origin: ["http://localhost:5173", "student-teacher-appointment-70quqehl6.vercel.app"], // add Vercel domain here
+  origin: ["http://localhost:5173", "https://student-teacher-appointment-green.vercel.app/"], // add Vercel domain here
   credentials: true
 }));
 
