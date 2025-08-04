@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+HU:wght@100..400&display=swap');
+
+*{
+  padding:0px;
+  margin:0px;
+  box-sizing:border-box;
+}
+
+:root{
+  color:darkmagenta;
+  --pcolor:rgb(207, 12, 207);
+  --scolor:black;
+  --tcolor:crimson;
+}
+
+.container{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  gap:20px;
+}
+
+.navbar{
+  width:100%;
+  height:75px;
+  background-color: var(--scolor);
+  color:#fff;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right:10px;
+  box-shadow: 0 0 25px silver;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  position:fixed;
+  top:0px;
+  z-index: 999;
+}
+
+.book{
+  color: var(--pcolor);
+  font-size: 30px;
+  position: relative;
+  top: 3.5px;
+}
+
+.navbar h2{
+  font-family: "Playwrite HU", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  color: #fff;
+}
+
+.text{
+  position:relative;
+  text-shadow: 1.3px 1.3px;
+  text-transform: uppercase;
+}
+
+.text::before{
+  content: attr(data-text);
+  position:absolute;
+  top:0;
+  left:0;
+  transform-origin: bottom;
+  transform: rotateX(180deg);
+  line-height: 1.4em;
+  background: linear-gradient(0deg, #fff 0, transparent 80%);
+  background-clip: text;
+  color: transparent;
+  opacity: 0.5;
+}
+
+ul{
+  width: 55%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.signup{
+  background-color: var(--tcolor);
+  border-radius: 6px;
+}
+
+ul li a{
+  text-decoration: none;
+  color: #fff;
+  padding:8px;
+  font-family: sans-serif;
+  position:relative;
+  cursor: pointer;
+  z-index: 1;
+}
+
+ul li a:hover{
+  color: var(--scolor);
+  font-weight: 700;
+}
+
+ul li a::before{
+  content: "";
+  position: absolute;
+  top:0px;
+  left:0px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: black;
+  width:0;
+  height:0;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+ul li a:hover::before{
+  width:100%;
+  height:100%;
+}
+
+.icon{
+  display:none;
+}
+
+@media only screen and (max-width:760px){
+  .icon{
+    display: block;
+  }
+  ul li a{
+    color: var(--pcolor);
+    text-shadow: 1.2px 1.2px var(--scolor);
+    font-weight: 800;
+  }
+  .down{
+    width:100%;
+    min-height: 85vh;
+    color:var(--scolor);
+    box-shadow: 0 0 25px var(--scolor);
+    border-radius: 20px;
+    position:absolute;
+    top:80px;
+    left:0;
+    transform-origin: center;
+    transform: scale(1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.5s;
+  }
+  .center{
+    color:var(--scolor);
+    box-shadow: 0 0 25px var(--scolor);
+    border-radius: 20px;
+    position:absolute;
+    top:350px;
+    left:25%;
+    transform-origin: center;
+    transform: scale(0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.5s;
+  }
+}
+
+.home{
+  width:100%;
+  min-height:100vh;
+  margin-top:76px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+}
+
+.image{
+  width:100%;
+  height:100vh;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-image: url("https://media.istockphoto.com/id/2182825843/photo/open-enrollment-school-2025-2026-illustration-with-icons-arrows-and-keywords-on-a-black.jpg?s=612x612&w=0&k=20&c=Gx3RwNR5DNiit1o1qhj6UeG6AzyxMuTU_w6o0rixByg=");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:sticky;
+  top:0;
+}
+
+.home div:nth-child(2), .home div:last-child{
+  width:100%;
+  min-height:100vh;
+  padding:20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: var(--scolor);
+  background-color: violet;
+  box-shadow: 2px 2px 10px var(--scolor);
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+  transform-origin: top;
+  position:sticky;
+  top:0px
+}
+
+.home div:nth-child(2) p, .home div:last-child p{
+  font-weight: 600;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.home div:nth-child(2) h3 span, .home div:last-child h3 span {
+  padding:6px 10px;
+  border-radius: 9px;
+  background-color: var(--tcolor);
+  color: #fff;
+  border: 2px solid var(--scolor);
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.5s;
+}
+
+.home div:nth-child(2) h3 span:active, .home div:last-child h3 span:active{
+  transform: scale(0.8);
+}
+
+/* .home div:nth-child(2) h3 span::after, .home div:last-child h3 span::after{
+  content: ":-";
+} */
+
+.register{
+  width:100%;
+  margin-top: 80px;
+  min-height:450px;
+  color: var(--scolor);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputContainer{
+  width:28%;
+  min-height: 450px;
+  box-shadow: 2px 2px 10px 3px;
+  border-radius: 30px;
+  padding:20px;
+  border-radius: 30px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:15px;
+}
+
+.inputContainer .inp{
+  width:100%;
+  height:34px;
+  border-radius:8px;
+  padding-left:6px;
+}
+
+.inputContainer select{
+  width:100%;
+  height:35px;
+  border-radius:8px;
+  padding:0px 6px;
+  border: 2px solid;
+}
+
+.inputContainer>div{
+  width:100%;
+  height:35px;
+  border-radius:8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.inputContainer>div input{
+  width: 100%;
+  position:relative;
+}
+
+.email, .password{
+  font-size: 26px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: white;
+  position: absolute;
+  top: 4px;
+  right: 1.5px;
+}
+
+.inputContainer button{
+  background-color: var(--tcolor);
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.inputContainer button:active{
+  transform:scale(0.8)
+}
+
+@media only screen and (max-width:1200px){
+  .register{
+    display:flex;
+  }
+  .inputContainer{
+    flex: 0.3 1 0px;
+  }
+}
+
+@media only screen and (max-width:950px){
+  .inputContainer{
+    flex: 0.3 1 100px;
+  }
+}
+
+@media only screen and (max-width:750px){
+  .inputContainer{
+    flex: 0.3 1 180px;
+  }
+}
+
+@media only screen and (max-width:550px){
+  .inputContainer{
+    flex: 0.3 1 260px;
+  }
+}
+
+.enroll{
+  width:100%;
+  min-height: 100vh;
+  margin-top: 40px;
+  padding-bottom: 10px;
+  color:black;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.student{
+  width: 40%;
+  min-height:280px;
+  padding:15px;
+  padding-left: 24px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 10px var(--pcolor);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+}
+
+.student div:last-child{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.student div:last-child h1{
+  margin-top: 8px;
+  font-size: 37px;
+}
+
+.student div:last-child span{
+  padding: 8px 4px;
+  background-color: var(--tcolor);
+  color: #fff;
+  border-radius: 10px;
+  border: 2px solid black;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.student div:last-child span:active{
+  transform: scale(0.8);
+}
+
+.teacher{
+  width: 40%;
+  min-height:280px;
+  padding:15px;
+  padding-left: 24px;
+  border-radius: 15px;
+  box-shadow: -3px 3px 10px var(--pcolor);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+}
+
+.teacher div:last-child{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.teacher div:last-child h1{
+  margin-top: 8px;
+  font-size: 40px;
+}
+
+.teacher div:last-child span{
+  padding: 8px 4px;
+  background-color: var(--tcolor);
+  color: #fff;
+  border-radius: 10px;
+  border: 2px solid black;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.teacher div:last-child span:active{
+  transform: scale(0.8);
+}
+
+@media only screen and (max-width:960px){
+  .enroll{
+    margin-top: 90px;
+    gap:40px;
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+  .student, .teacher{
+    flex-grow: 0.6;
+    flex-basis: 50%;
+  }
+}
+
+.approval, .data{
+  width:100%;
+  min-height:100vh;
+  margin-top: 80px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap:10px;
+}
+
+.content, .data>div:first-child{
+  width:100%;
+  min-height: 50px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px var(--scolor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.approve, .approved{
+  width:80%;
+  min-height: 45px;
+  border-radius: 8px;
+  color: var(--scolor);
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  box-shadow: 2px 2px 10px var(--scolor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.approve div, .approved div{
+  width:100%;
+  padding: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap:10px;
+}
+
+.approve .spbut{
+  padding:6px 10px;
+  border-radius: 8px;
+  border: 2px solid black;
+  background-color: var(--tcolor);
+  color: #fff;
+  display: inline-block;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.approve .spbut:active{
+  transform: scale(0.8);
+}
+
+.contact{
+  margin-top: 76px;
+  width:100%;
+  padding:20px 0px;
+  min-height:100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+}
+
+.address, .map{
+  width:48%;
+  min-height: 100vh;
+  padding: 10px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+}
+
+.address div{
+  width:100%;
+  height:350px;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  color: var(--scolor);
+  box-shadow: 2px 2px 6px var(--scolor);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:10px;
+}
+
+.address div p{
+  text-align: center;
+}
+
+.address div a{
+  text-decoration: none;
+  color: var(--pcolor);
+}
+
+.address div:hover{
+  box-shadow: 6px 6px 6px var(--scolor);
+}
+
+.map div{
+  width:100%;
+  height: 600px;
+}
+
+iframe{
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width:750px){
+  .address, .map{
+    width:100%
+  }
+}
