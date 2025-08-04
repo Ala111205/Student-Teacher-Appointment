@@ -31,5 +31,9 @@ app.use("/api/students", studentRoutes);
 app.use("/api/teachers", teacherRoutes);
 app.use("/api/admins", adminRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Student-Teacher Appointment Booking API is running...");
+});
+
 const port = process.env.PORT || 4000;
 app.listen(port, ()=>{console.log(`Server running on ${port}`)})
