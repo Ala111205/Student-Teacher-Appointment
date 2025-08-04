@@ -6,7 +6,7 @@ export default function TeacherData(){
 
     const handleData = async ()=>{
         try {
-            const res = await api.get("http://localhost:4000/api/teachers/approved");
+            const res = await api.get("/api/teachers/approved");
             setTeacherData(res.data);
         } catch (error) {
             console.log("Error fetching approved teacher:", error)

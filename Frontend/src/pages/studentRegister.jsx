@@ -41,7 +41,7 @@ export default function StudentRegister(){
         const userCredential = await createUserWithEmailAndPassword(auth, email, defaultPassword);
         const id = userCredential.user.uid;
 
-        const res = await api.post("http://localhost:4000/api/students/create", {
+        const res = await api.post("/api/students/create", {
             id,
             name,
             email,

@@ -6,7 +6,7 @@ export default function Studentdata(){
 
     const handleData = async ()=>{
         try {
-            const res = await api.get("http://localhost:4000/api/students/approved");
+            const res = await api.get("/api/students/approved");
             
             console.log("students data: ", res.data)
             setStudentData(res.data);
