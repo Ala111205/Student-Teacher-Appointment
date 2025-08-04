@@ -23,7 +23,7 @@ export default function TeacherData(){
                 <div>
                     <h2>Teachers List</h2>
                 </div>
-                {teacherData.map((data)=>(
+                {Array.isArray(teacherData)&&teacherData.map((data)=>(
                     <div className="approved" key={data._id}>
                         <div>
                             <span>Name: {data.name}</span>
