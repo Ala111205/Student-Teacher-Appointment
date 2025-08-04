@@ -17,8 +17,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <Router>
-          <Navbar show={show} setShow={setShow}/>
+        <Navbar show={show} setShow={setShow}/>
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/enroll" element={<Enrollment/>} />
@@ -29,7 +28,6 @@ function App() {
             <Route path="/teacherData" element={<TeacherData/>} />
             <Route path="/contact" element={<Contact/>} />
           </Routes>
-        </Router>
       </div>
     </>
   )
