@@ -32,6 +32,8 @@ export default function AdminApproval() {
         }
     };
 
+    console.log("Getting approve-false data", pendingStudents)
+
     useEffect(() => {
         fetchPending();
     }, []);
