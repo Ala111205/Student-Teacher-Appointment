@@ -20,7 +20,8 @@ app.use(requestLogger);
 
 
 const MONGO_uri = process.env.MONGO_URI;
-console.log("MONGO_URI is:", MONGO_uri);
+console.log("📌 Fetching pending users from DB...");
+console.log("Mongo URI:", process.env.MONGODB_URI);
 
 mongoose.connect(MONGO_uri)
   .then(() => console.log("MongoDB connected..."))
