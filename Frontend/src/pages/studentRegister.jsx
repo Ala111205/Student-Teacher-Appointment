@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import {auth} from "../firebase";
-import axios from "axios";
+import api from "../axios";
 import { MdEmail } from "react-icons/md";
 import AOS from "aos";
 import "aos/dist/aos.css"
@@ -41,7 +41,7 @@ export default function StudentRegister(){
         const userCredential = await createUserWithEmailAndPassword(auth, email, defaultPassword);
         const id = userCredential.user.uid;
 
-        const res = await axios.post("http://localhost:4000/api/students/create", {
+        const res = await api.post("http://localhost:4000/api/students/create", {
             id,
             name,
             email,

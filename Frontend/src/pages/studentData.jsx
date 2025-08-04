@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../axios";
 
 export default function Studentdata(){
     const [studentdata, setStudentData] = useState([]);
 
     const handleData = async ()=>{
         try {
-            const res = await axios("http://localhost:4000/api/students/approved");
+            const res = await api.get("http://localhost:4000/api/students/approved");
             
             console.log("students data: ", res.data)
             setStudentData(res.data);

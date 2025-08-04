@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../axios";
 
 export default function TeacherData(){
     const [teacherData, setTeacherData] = useState([]);
 
     const handleData = async ()=>{
         try {
-            const res = await axios("http://localhost:4000/api/teachers/approved");
+            const res = await api.get("http://localhost:4000/api/teachers/approved");
             setTeacherData(res.data);
         } catch (error) {
             console.log("Error fetching approved teacher:", error)

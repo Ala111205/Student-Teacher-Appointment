@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../axios";
 
 export default function AdminApproval() {
     const [pendingStudents, setPendingStudents] = useState([]);
@@ -7,7 +7,7 @@ export default function AdminApproval() {
 
     const fetchPending = async () => {
         try {
-            const res = await axios.get("http://localhost:4000/api/admins/pending", {
+            const res = await api.get("/api/admins/pending", {
                 headers: { "Cache-Control": "no-cache" }
             });
             setPendingStudents(res.data.students || []);
@@ -19,7 +19,7 @@ export default function AdminApproval() {
 
     const handleApprove = async (type, id) => {
         try {
-            await axios.put(`http://localhost:4000/api/admins/approved/${type}/${id}`);
+            await api.put(`/api/admins/approved/${type}/${id}`);
             if (type === "student") {
                 setPendingStudents(prev => prev.filter(user => user._id !== id));
                 alert("Student Approved");
