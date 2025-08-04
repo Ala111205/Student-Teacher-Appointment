@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const requestLogger = require("./middelWares/requestLogger");
 
 console.log("📌 Fetching pending users from DB...");
-console.log("Mongo URI:", process.env.MONGODB_URI);
+console.log("Mongo URI:", process.env.MONGO_URI);
 
 const app = express();
 
