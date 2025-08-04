@@ -14,10 +14,10 @@ app.use(morgan("dev"));
 app.use(requestLogger);
 
 
-const MONGO_URI = "mongodb://localhost:27017/StudentTeacherDB";
-console.log("MONGO_URI is:", MONGO_URI);
+const MONGO_uri = process.env.MONGO_URI;
+console.log("MONGO_URI is:", MONGO_uri);
 
-mongoose.connect(MONGO_URI)
+mongoose.connect(MONGO_uri)
   .then(() => console.log("MongoDB connected..."))
   .catch((error) => console.log(error));
 
