@@ -25,7 +25,7 @@ export default function Studentdata(){
                 <div>
                     <h2>Student List</h2>
                 </div>
-                {studentdata.map((data)=>(
+                {Array.isArray(studentdata)&&studentdata.map((data)=>(
                     <div className="approved" key={data._id}>
                         <div>
                             <span>Name: {data.name}</span>

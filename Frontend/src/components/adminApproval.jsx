@@ -42,7 +42,7 @@ export default function AdminApproval() {
                 <div className="content">
                     <h2>Pending Approvals</h2>
                 </div>
-                {pendingStudents.map((user)=>{
+                {Array.isArray(pendingStudents)&&pendingStudents.map((user)=>{
                     return(
                         <div className="approve" key={user._id}>
                             <div>
@@ -53,7 +53,7 @@ export default function AdminApproval() {
                         </div>
                     )
                 })}
-                {pendingTeachers.map((user)=>{
+                {Array.isArray(pendingStudents)&&pendingTeachers.map((user)=>{
                     return(
                         <div className="approve" key={user._id}>
                             <div><span>Name:- {user.name}</span> 
