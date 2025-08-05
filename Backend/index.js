@@ -10,15 +10,16 @@ console.log("Mongo URI:", process.env.MONGO_URI);
 
 const app = express();
 
-app.use(cors({
-  origin:"https://student-teacher-appointment-green.vercel.app/", // add Vercel domain here
-  credentials: true
-}));
-
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 app.use(requestLogger);
+
+app.use(cors({
+  origin:["http://localhost:5173", "https://student-teacher-appointment-green.vercel.app/"], // add Vercel domain here
+  credentials: true
+}));
+
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected..."))
