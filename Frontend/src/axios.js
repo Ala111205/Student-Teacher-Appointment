@@ -5,6 +5,6 @@ const api = axios.create({
      withCredentials: true
 });
 
-console.log(".env file Not working: ",import.meta.env.VITE_API_URL)
+console.log(".env file : ",import.meta.env.VITE_API_URL)
 
 export default api;
