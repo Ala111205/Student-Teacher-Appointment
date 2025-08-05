@@ -5,6 +5,6 @@ const api = axios.create({
      withCredentials: true
 });
 
-console.log(process.env.REACT_APP_API_URL)
+console.log(".env file Not working: ",process.env.REACT_APP_API_URL)
 
 export default api;
