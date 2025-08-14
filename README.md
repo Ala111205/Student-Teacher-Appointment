@@ -1,2 +1,6 @@
-# Student-Teacher-Appointment
-I created this based on the student-teacher appointment via frontend that's approve will give by admin via frontend in this project I used the Frontend (Html, CSS, JavaScript via React.js) and Backend (Express.js and Firebase auth) integration with MongoDB Atlas, also list shown in Home Student and Teacher approved list. Fontend Link - https://student-teacher-appointment-green.vercel.app/, it host online so it will take little time.
+# 🎓 Student-Teacher Appointment
+  A full-stack web application for booking student-teacher appointments, where admin approval is handled via the frontend.  
+Built with React.js (HTML, CSS, JavaScript) for the frontend and Express.js + Firebase Auth for the backend, integrated with MongoDB Atlas.  
+The homepage displays approved student and teacher lists.  
+Frontend Link: [Student-Teacher Appointment](https://student-teacher-appointment-green.vercel.app/) *(may take a few seconds to load)*.
+
