@@ -55,7 +55,7 @@ export default function AdminApproval() {
                         </div>
                     )
                 })}
-                {Array.isArray(pendingStudents)&&pendingTeachers.map((user)=>{
+                {Array.isArray(pendingTeachers)&&pendingTeachers.map((user)=>{
                     return(
                         <div className="approve" key={user._id}>
                             <div><span>Name:- {user.name}</span> 
