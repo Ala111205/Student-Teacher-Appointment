@@ -5,7 +5,7 @@
 
         The homepage dynamically displays approved students and teachers only.
     
-**Frontend Link:-** https://student-teacher-appointment-green.vercel.app/ *(may take a few seconds to load)*.
+**Live Demo:-** https://student-teacher-appointment-green.vercel.app/ *(may take a few seconds to load)*.
 
 **🚀 Features:**
 
